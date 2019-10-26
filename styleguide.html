@@ -1,0 +1,291 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"/>
+    <link rel='icon' type='image/x-icon' href='favicon.ico' />
+    <title>Lovisa — Style Guide</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <header>
+                <div>
+                    <div class="logo"></div>
+                    <h2>Design system</h2>
+                    <h5 class="italic">CSS style guide</h5>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#grid-system">01 Grid system</a></li>
+                        <li><a href="#responsive-grid">02 Responsive grid</a></li>
+                        <li><a href="#offset">03 Offset</a></li>
+                        <li><a href="#gap">04 Gap</a></li>
+                        <li><a href="#variables">05 Variables</a></li>
+                        <li><a href="#mixins">06 Mixins</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="page">
+            <div class="main main--padded">
+                <section class="container grid">
+                    <h1 class="col-xs-12 col-xl-7">How this website was created</h1>
+                    <p class="col-xs-12 col-lg-9 col-xl-7">I want to learn more about designing with code and making design systems. This website became a project itself, to create my portfolio using a system and following my style guide.</p>
+                    <a class="col--9 text-link" href="https://www.figma.com/file/UTQfTbGVwtOTJJgimBEZ72/WNM499?node-id=126%3A3" target="_blank">View style guide in Figma</a>
+                </section>
+                <section id="grid-system" class="container scroll-target">
+                    <h2 class="col-xs-9 col-xl-7 offset--2">Grid System</h2>
+                    <p class="col-xs-9 col-xl-7 offset--2">Using CSS Grid makes it easy to create rows and columns to layout and align content. See examples below.</p>
+                    <div class="grid">
+                        <div class="col--12">
+                            <div class="well">.col--12</div>
+                        </div>
+                        <div class="col--6">
+                            <div class="well">.col--6</div>
+                        </div>
+                        <div class="col--6">
+                            <div class="well">.col--6</div>
+                        </div>
+                        <div class="col--4">
+                            <div class="well">.col--4</div>
+                        </div>
+                        <div class="col--4">
+                            <div class="well">.col--4</div>
+                        </div>
+                        <div class="col--4">
+                            <div class="well">.col--4</div>
+                        </div>
+                    </div>
+                    <pre><code class="language-markup">
+                            <script type="prism-html-markup"><div class="grid">
+                                <div class="col--12">
+                                        <div>.col--12</div>
+                                    </div>
+                                    <div class="col--6">
+                                        <div>.col--6</div>
+                                    </div>
+                                    <div class="col--6">
+                                        <div>.col--6</div>
+                                    </div>
+                                <div class="col--4">
+                                    <div>.col--4</div>
+                                </div>
+                                <div class="col--4">
+                                    <div>.col--4</div>
+                                </div>
+                                <div class="col--4">
+                                    <div>.col--4</div>
+                                </div>
+                            </div></script>
+                            </code></pre>
+                    <p>Here is an example of the 12 column grid.</p>
+                </section>
+                <section id="responsive-grid" class="container scroll-target">
+                    <h2>Responsive Grid</h2>
+                    <p>The grid is responsive. On different devices, the columns will change to best fit the screen.</p>
+                    <div class="grid">
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                    </div>
+                    <pre><code class="language-markup">
+                            <script type="prism-html-markup"><div class="grid">
+                                <div class="col-xs-12 col-md-6 col-lg-3">
+                                    <div>column</div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 col-lg-3">
+                                    <div>column</div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 col-lg-3">
+                                    <div>column</div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 col-lg-3">
+                                    <div>column</div>
+                                </div>
+                            </div></script>
+                    </code></pre>
+                    <p>The classes xs, md and lg make the grid follow the breakpoints. </p>
+                </section>
+                <section id="offset" class="container scroll-target">
+                    <h2>Offset</h2>
+                    <p>To offset columns, use the class .col to decide the column witdh, and .offset to decide the placecment.</p>
+                    <div class="grid">
+                        <div class="col--4 offset--2">
+                            <div class="well">.col--4 .offset--2</div>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="col--4 offset--8">
+                            <div class="well">.col--4 .offset--8</div>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="col--8 offset--4">
+                            <div class="well">.col--8 .offset--4</div>
+                        </div>
+                    </div>
+                    <pre><code class="language-markup">
+                            <script type="prism-html-markup"><div class="grid">
+                                    <div class="col--4 offset--2">
+                                        <div>.col--4 .offset--2</div>
+                                    </div>
+                                </div>
+                                <div class="grid">
+                                    <div class="col--4 offset--8">
+                                        <div>.col--4 .offset--8</div>
+                                    </div>
+                                </div>
+                                <div class="grid">
+                                    <div class="col--4 offset--4">
+                                        <div>.col--8 .offset--4</div>
+                                    </div>
+                                </div></script>
+                    </code></pre>
+                </section>
+                <section id="gap" class="container scroll-target">
+                    <h2>Gap</h2>
+                    <p>To add a gap between the columns, add the class .gap together with .grid.</p>
+                    <div class="grid row-xs-12 gap">
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 col-lg-3">
+                            <div class="well">Column</div>
+                        </div>
+                    </div>
+                    <pre><code class="language-markup">
+                            <script type="prism-html-markup"><div class="grid gap">
+                                    <div class="col-xs-12 col-md-6 col-lg-3">
+                                        <div>column</div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-3">
+                                        <div>column</div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-3">
+                                        <div>column</div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 col-lg-3">
+                                        <div>column</div>
+                                    </div>
+                                </div></script>
+                    </code></pre>
+                    <p>In this example, the gap size is set to 10px.</p>
+                </section>
+
+                    <!-- object, media query, value -->
+                <section id="variables" class="container scroll-target">
+                    <h2>Variables</h2>
+                    <p class="col-xs-12 col-lg-5">Variables and maps determine the number of columns, and the media query point at when to use different column sizes. We use these to generate the grid classes showed above, and for the custom mixins listed below.</p>
+                    <pre><code class="language-css">
+                            $breakpoints: (
+                                    xs: 0,
+                                    sm: 500px,
+                                    md: 800px,
+                                    lg: 1000px,
+                                    xl: 1500px
+                                );
+
+                                $columns-map: (
+                                    12:12,
+                                    10:10
+                                );
+                                
+                                $sizes-map: (
+                                    xl: 3rem,
+                                    l: 1.5rem,
+                                    m: 1rem,
+                                    s: 0.5rem,
+                                    n: 0
+                                );
+                    </code></pre>
+                </section>
+                <section id="mixins" class="container scroll-target">
+                    <h2>Mixins</h2>
+                    <p>Mixins are used with the grid variables to generate CSS for a grid system and its columns.</p>
+                    <pre><code class="language-css">
+                        @mixin makeGrid() {
+                            .grid {
+                                display: grid;
+                                grid-template-columns: repeat(#{map-get($columns-map,12)}, 1fr);
+
+                                &.gap {
+                                    grid-gap: var(--gap-size);
+                                    --gap-size: #{map-get($sizes-map,'m')};
+                                }
+                            }
+                        }
+
+                        @mixin makeColumns($breakpoint:'', $columns:12) {
+                            @for $i from 1 through $columns {
+                                .col-#{$breakpoint}-#{$i} {
+                                    grid-column-end: span #{$i};
+                                }
+                                .offset-#{$breakpoint}-#{$i} {
+                                    grid-column-start: $i;
+                                }
+                            }
+                        }
+                    </code></pre>
+                </section>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+    <script src="js/scroll-target.js"></script>
+</body>
+</html>

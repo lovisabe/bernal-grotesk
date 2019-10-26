@@ -1,0 +1,25 @@
+body {
+    background-color: var(--color-gray-light);
+}
+
+.compact {
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// .flex {
+//     &-parent { display: flex; }
+//     &-child { flex: 1 1 auto; }
+//     &-none { flex: none; }
+//     &-wrap { flex-wrap: wrap; }
+//     &-vertical { flex-direction: column; }
+//     &-align-center { align-items: center; }
+//     &-justify-center { justify-content: center; }
+// }

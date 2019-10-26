@@ -1,0 +1,85 @@
+$color-main: #9DC4FF;
+$color-gray-dark: #101010;
+$color-gray: #909090;
+$color-gray-light: #FBF9F7;
+$color-white: #ffffff;
+
+$breakpoints: (
+    xs: 0,
+    sm: 500px,
+    md: 768px,
+    lg: 1000px,
+    xl: 1500px
+);
+
+// $columns: 12;
+$header-height: 3rem;
+
+$columns-map: (
+    12:12,
+    10:10
+);
+
+$sizes-map: (
+    xl: 3rem,
+    l: 1.5rem,
+    m: 1rem,
+    s: 0.5rem,
+    n: 0
+);
+
+$positions-map: (
+    t: top,
+    r: right,
+    b: bottom,
+    l: left
+);
+
+$boxes-map: (
+    p: padding,
+    m: margin
+);
+
+$display-map: (
+    b: block,
+    i: inline,
+    inb: inline-block,
+    f: flex,
+    inf: inline-flex,
+    n: none
+);
+
+$alignment-vert-map: (
+    t: top,
+    m: middle,
+    b: bottom,
+    bl: baseline,
+    tb: text-bottom
+);
+
+$alignment-horz-map: (
+    l: left,
+    c: center,
+    r: right,
+    j: justify
+);
+
+$positioning-map: (
+    s: static,
+    r: relative,
+    a: absolute,
+    f: fixed
+);
+
+$gap: map-get($sizes-map,'m');
+
+:root {
+    --color-main:#{$color-main};
+
+    --color-gray-dark: #{$color-gray-dark};
+    --color-gray: #{$color-gray};
+    --color-gray-light: #{$color-gray-light};
+    --color-white: #{$color-white};
+
+    --header-height:#{$header-height};
+}

@@ -1,0 +1,27 @@
+// sass --watch sass/style.scss:css/style.css
+// sass --watch style.scss:style.min.css --style compressed
+
+@import './_variables';
+@import './_functions';
+@import './_reset';
+
+
+@import './_classes';
+
+
+@import './_theme';
+@import './_typography';
+
+
+@include makeGrid();
+@include makeColumns();
+
+@each $break-i, $break-v in $breakpoints {
+    @media (min-width: $break-v) {
+        @include makeRow(#{$break-i});
+        @include makeGap(#{$break-i});
+        @include makeColumns(#{$break-i});
+        @include makeUtilities(#{$break-i});
+        @include makeFlex(#{$break-i});
+    }
+}

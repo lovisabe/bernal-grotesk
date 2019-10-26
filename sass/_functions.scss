@@ -1,0 +1,101 @@
+
+@mixin makeGrid() {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(#{map-get($columns-map,12)}, 1fr);
+
+        &.gap {
+            grid-gap: var(--gap-size);
+            --gap-size: #{map-get($sizes-map,'m')};
+        }
+    }
+}
+
+@mixin makeRow($breakpoint:'') {
+    @each $i, $v in $columns-map {
+        .row-#{$breakpoint}-#{$i} {
+            grid-template-columns: repeat(#{$v}, 1fr);
+        }
+    }
+}
+
+@mixin makeGap($breakpoint:'') {
+    @each $i, $v in $sizes-map {
+        .grid.gap-#{$breakpoint}-#{$i} {
+            --gap-size:#{$v};
+        }
+    }
+}
+
+
+@mixin makeColumns($breakpoint:'', $columns:12) {
+    @for $i from 1 through $columns {
+        .col-#{$breakpoint}-#{$i} {
+            grid-column-end: span #{$i};
+        }
+        .offset-#{$breakpoint}-#{$i} {
+            grid-column-start: $i;
+        }
+    }
+}
+
+@mixin makeUtilities($breakpoint:'') {
+    @each $box-i, $box-v in $boxes-map {
+        @each $size-i, $size-v in $sizes-map {
+            @each $pos-i, $pos-v in $positions-map {
+                .#{$box-i}-#{$breakpoint}-#{$pos-i}#{$size-i} {
+                    #{$box-v}-#{$pos-v}:$size-v;
+                }
+            }
+            .#{$box-i}-#{$breakpoint}-h#{$size-i} {
+                #{$box-v}-left:$size-v;
+                #{$box-v}-right:$size-v;
+            }
+            .#{$box-i}-#{$breakpoint}-v#{$size-i} {
+                #{$box-v}-top:$size-v;
+                #{$box-v}-bottom:$size-v;
+            }
+            .#{$box-i}-#{$breakpoint}-#{$size-i} {
+                #{$box-v}:$size-v;
+            }
+        }
+    }
+    @each $i, $v in $alignment-horz-map {
+        .align-#{$breakpoint}-#{$i} {text-align:$v;}
+    }
+    @each $i, $v in $alignment-vert-map {
+        .align-#{$breakpoint}-#{$i} {vertical-align:$v;}
+    }
+    @each $i, $v in $display-map {
+        .display-#{$breakpoint}-#{$i} {display:$v;}
+    }
+    @each $i, $v in $positioning-map {
+        .position-#{$breakpoint}-#{$i} {position:$v;}
+    }
+}
+
+@mixin makeFlex($breakpoint:'') {
+    .flex {
+        &-#{$breakpoint}-parent { display: flex; }
+        &-#{$breakpoint}-child { flex: 1 1 auto; }
+        &-#{$breakpoint}-none { flex: none; }
+        &-#{$breakpoint}-wrap { flex-wrap: wrap; }
+        &-#{$breakpoint}-vertical { flex-direction: column; }
+        &-#{$breakpoint}-align-center { align-items: center; }
+        &-#{$breakpoint}-justify-center { justify-content: center; }
+    }
+    @for $i from 1 through 10 {
+        .order-#{$breakpoint}-#{$i} {order:$i;}
+    }
+}
+
+@function rem-calc($size) {
+    $remSize: $size / 16;
+    @return #{$remSize}rem;
+}
+
+@function line-height($size) {
+    $remSize: $size / 16;
+    $lineHeight: $remSize * 1.4;
+    @return #{$lineHeight}rem;
+}

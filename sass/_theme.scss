@@ -1,0 +1,276 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.well {
+    padding: map-get($sizes-map,'l');
+    border: 1px solid var(--color-gray-dark);
+    font-family: 'Sneak', sans-serif;
+    text-align: center;
+}
+.swell {
+    @extend .well;
+    background-color: var(--color-white);
+    font-family: 'Sneak', sans-serif;
+}
+
+.wrapper {
+    margin: 0 auto;
+
+    p::selection {
+        background-color: lighten($color-main, 10%);
+    }
+    h1::selection {
+        background-color: lighten($color-main, 10%);
+    }
+    h2::selection {
+        background-color: lighten($color-main, 10%);
+    }
+    h5::selection {
+        background-color: lighten($color-main, 10%);
+    }
+    a::selection {
+        background-color: lighten($color-main, 10%);
+    }
+}
+
+.page {
+    display: grid;
+    grid-template-columns: 25vw 75vw;
+
+    @media screen and (max-width: map-get($breakpoints,'md')){
+        grid-template-columns: auto;
+    }
+}
+
+.logo {
+    background-image: url(../img/logo.svg);
+    width: 3rem;
+    height: 3rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 2rem;
+
+    &:hover {
+        background-image: url(../img/smile.svg);
+    }
+}
+
+.sidebar {
+    position: fixed;
+    height: 100vh;
+    width: 25vw;
+    background: var(--color-white);
+
+    @media screen and (max-width: map-get($breakpoints,'md')){
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    header {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1rem;
+
+        @media screen and (max-width: map-get($breakpoints,'md')){
+            height: auto;
+        }
+    }
+}
+
+.main {
+    grid-column-start: 2;
+    margin-bottom: rem-calc(180);
+
+    @media screen and (max-width: map-get($breakpoints,'md')){
+        grid-column-start: 1;
+        margin-bottom: 0;
+    }
+
+    &--padded {
+        padding: rem-calc(40);
+    }
+}
+
+section {
+    margin-bottom: rem-calc(180);
+
+    nav {
+        margin-bottom: rem-calc(40);
+    }
+
+    @media screen and (max-width: map-get($breakpoints,'md')){
+        margin-bottom: rem-calc(0);
+    }
+}
+
+.nav {
+
+    ul {
+        @extend .compact;
+        li {
+            display: flex;
+            align-items: flex-end;
+        }
+    }
+    a {
+        display: block;
+        padding: 0.2em 0.5em;
+        outline: none;
+    }
+    &bar {
+        -color: var(--color-gray-light);
+
+        line-height: var(--header-height);
+
+        h1 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+    }
+
+    @media screen and (max-width: map-get($breakpoints,'md')){
+        display: none;
+    }
+}
+
+.container {
+    background-color: var(--color-gray-light);
+    
+    img {
+        width: 100%;
+    }
+}
+
+.dark {
+    background-color: var(--color-gray-dark);
+
+    .headline {
+        color: var(--color-white);
+    }
+}
+
+.letter-animation {
+    width: auto;
+    height: 100vw;
+
+    @media screen and (min-width: map-get($breakpoints,'md')){
+        display: none;
+    }
+}
+
+.typetester {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: solid 1px $color-gray;
+    margin-bottom: rem-calc(70);
+}
+
+#typetester {
+    background-color: var(--color-white);
+
+    @media screen and (max-width: map-get($breakpoints,'md')){
+        display: none;
+    }
+}
+
+.example-image-carousel {
+	overflow: hidden;
+	height: rem-calc(600);
+	position: relative;
+    display: flex;
+    
+    @media screen and (max-width: map-get($breakpoints,'md')) {
+        height: auto;
+    }
+}
+
+.example-image-items {
+	position: relative;
+	flex: 1;
+	overflow: hidden;
+}
+
+.example-image-item {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+	transition: transform 1s;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+	&.first {
+        background-image: url('../img/bernal-04.jpg');
+		left: 0;
+	}
+	&.second {
+        background-image: url('../img/bernal-05.jpg');
+        left: 100%;
+        
+        @media screen and (max-width: map-get($breakpoints,'md')) {
+            left: 0;
+        }
+	}
+	&.third {
+        background-image: url('../img/bernal-02.jpg');
+        left: 200%;
+        
+        @media screen and (max-width: map-get($breakpoints,'md')) {
+            left: 0;
+        }
+    }
+    &.fourth {
+        background-image: url('../img/bernal-01.jpg');
+        left: 300%;
+        
+        @media screen and (max-width: map-get($breakpoints,'md')) {
+            left: 0;
+        }
+    }
+    &.fifth {
+        background-image: url('../img/bernal-03.jpg');
+        left: 400%;
+        
+        @media screen and (max-width: map-get($breakpoints,'md')) {
+            left: 0;
+        }
+    }
+
+    @media screen and (max-width: map-get($breakpoints,'md')) {
+        height: rem-calc(500);
+        position: relative;
+    }
+    @media screen and (max-width: map-get($breakpoints,'sm')) {
+        height: rem-calc(300);
+    }
+}
+
+.button {
+    background-color: var(--color-main);
+    width: rem-calc(280);
+    height: rem-calc(70);
+    border: none;
+    outline: none;
+}
+
+  #download {
+    @media screen and (max-width: map-get($breakpoints,'md')){
+        display: none;
+    }
+}
+
+.language-markup, .language-css {
+    @media screen and (max-width: map-get($breakpoints,'md')) {
+        display: none;
+    }
+}
