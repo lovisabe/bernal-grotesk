@@ -1,6 +1,6 @@
 # Type Design Project
 
-This website showcase my typeface Bernal Grotesk. Check it out [here](https://lovisabe.github.io/bernal-grotesk/).
+This website showcase my typeface Bernal Grotesk. Check it out [here](https://github.com/lovisabe/bernal-grotesk.git).
 
 ## Index.html
 
